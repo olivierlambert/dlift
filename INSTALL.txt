@@ -1,0 +1,10 @@
+HOW TO install Dlift :
+
+1) copy dlift to : /etc/init.d/
+2) chmod it to execute
+3) make
+4) sudo make install
+
+
+Dlift need root to work (sudo dlift, or sudo /etc/init.d/dlift start)
+

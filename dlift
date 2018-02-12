@@ -1,0 +1,36 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          dlift
+# Required-Start:
+# Required-Stop:
+# Should-Start:
+# Default-Start:
+# Default-Stop:      
+# Short-Description: Start the daemon lift.
+# Description:
+### END INIT INFO
+
+PATHDAEMON=/bin/dlift
+
+
+
+case "$1" in
+  start)
+	echo "Start dlift"
+	$PATHDAEMON &
+	;;
+  stop)
+	echo "Stopping dlift"
+	/sbin/start-stop-daemon --stop --exec $PATHDAEMON
+	;;
+  restart)
+	echo "Restarting dlift"
+	/sbin/start-stop-daemon --stop --exec $PATHDAEMON
+	sleep 3
+	$PATHDAEMON &
+	;;
+  *)
+	echo "Usage: start|stop|restart"
+	exit 3
+	;;
+esac
